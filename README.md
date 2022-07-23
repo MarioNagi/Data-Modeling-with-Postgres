@@ -18,3 +18,29 @@ This project makes the folowing assumptions:
     pandas and psycopg2 are available
     A PosgreSQL database is available on localhost
     for the AWS database, you must create postgres data and specify the secuirty group to allow traffic and to put the database config in .env
+
+## Description of Files
+
+### Directory: data/log_data
+
+This directory contains a collection of JSON log files. These files are used to populate our Fact table - Song Plays - and to populate the Dimension tables for Users and Time.
+
+### Directory: data/song_data
+
+This directory contains a collection of Song JSON files. These files are used to populate Dimension tables for Songs and Artists.
+
+### create_tables.py
+
+This Python script recreates the database and tables used to storethe data.
+
+### etl.py
+
+This Python script reads in the Log and Song data files, processes and inserts data into the database.
+
+### sql_queries.py
+
+A Python script that defines all the SQL statements used by this project.
+
+### test.ipynb
+
+A Python Jupyter Notebook that was used to test that data was loaded properly.
