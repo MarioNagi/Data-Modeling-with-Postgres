@@ -19,6 +19,14 @@ This project makes the folowing assumptions:
     A PosgreSQL database is available on localhost
     for the AWS database, you must create postgres data and specify the secuirty group to allow traffic and to put the database config in .env
 
+
+## Database Schema
+
+After examining the Log and Song JSON files, I created a Star schema (shown below) that include one Fact table (songplays) and 4 Dimension tables.
+
+
+
+
 ## Description of Files
 
 ### Directory: data/log_data
