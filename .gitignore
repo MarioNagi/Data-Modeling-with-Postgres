@@ -1,0 +1,10 @@
+/.env
+/aws-postgres.py
+/aws_create_tables.py
+/aws_etl.py
+/database.ini
+/etl.ipynb
+/README.md
+/sql_queries.py
+/test.ipynb
+/__pycache__
