@@ -62,8 +62,8 @@ time_table_create = ("""
 # INSERT RECORDS
 
 songplay_table_insert = ("""
-INSERT INTO songplays (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+INSERT INTO songplays (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
 ON CONFLICT (songplay_id)
 DO NOTHING
 """)
@@ -105,7 +105,8 @@ SELECT song_id, songs.artist_id FROM songs
 JOIN artists ON artists.artist_id = songs.artist_id
 WHERE title = %s
 AND name = %s
-AND duration = %s;
+AND duration = %s
+AND song_id is not null;
 """)
 
 # QUERY LISTS

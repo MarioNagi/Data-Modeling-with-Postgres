@@ -79,10 +79,9 @@ def process_log_file(cur, filepath):
             songid, artistid = None, None
 
         # insert songplay record
-        songplay_data = [index+1, row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent]
+        songplay_data = (row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
-
-
+        
 def process_data(cur, conn, filepath, func):
     """
     This procedure takes the conn, cur, filepath and func to start processing json files in either songs or log directories 
@@ -112,6 +111,7 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
+
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
     
