@@ -25,6 +25,7 @@ This project makes the folowing assumptions:
 After examining the Log and Song JSON files, I created a Star schema (shown below) that include one Fact table (songplays) and 4 Dimension tables.
 
 
+<img width="785" alt="sparkifydb_erd 3" src="https://user-images.githubusercontent.com/22025520/180621766-f7e9a8f4-4841-4906-8a73-738cf6a8a687.png">
 
 
 ## Description of Files
